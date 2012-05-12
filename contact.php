@@ -1,5 +1,9 @@
 <?php
     //cc-by maarten eyskens
+    //start editing the settings here
+    $to = "YOUR EMAIL"; //your email here
+    $subject = "Contact"; //the subject here
+    //stop editing here
     
     function secure($string = ''){
         return stripslashes(trim(htmlspecialchars($string)));
@@ -20,8 +24,8 @@
     $name=secure($_POST['name']);
     $email=secure($_POST['email']);
     $message=secure($_POST['message']);
-    $to = "YOUR EMAIL";
- $subject = "Contact";
+    
+       $subject = "Contact";
         $body = "Name: $name Email: $email Message: $message";
  if (mail($to, $subject, $body)) {
    echo("<p>Message successfully sent!</p>");
